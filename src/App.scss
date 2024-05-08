@@ -1,0 +1,210 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+.container{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/002/016/404/original/fashion-love-background-video.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .message-in{
+    display: flex;
+    width: 70%;
+    height: 250px;
+    margin: auto;
+    background-color: #f6ada7;
+    box-shadow: #3d3451 0px 5px 15px;
+    border-radius: 40px;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    flex-direction: column;
+    padding: 20px;
+
+    h1{
+      margin: 0;
+      text-align: center;
+    }
+
+    .accept{
+      width: 170px;
+      height: 100px;
+      padding: 20px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      background-color: #f6ada7;
+      box-shadow: #3d3451 0px 5px 15px;
+      top: 110%;
+      left: 25%;
+      cursor: pointer;
+      transition: 0.2s;
+
+      h2{
+        color: white;
+      }
+    }
+    .accept:hover{
+      box-shadow: #3d3451 0px 10px 25px;
+    }
+
+    .icon{
+      position: absolute;
+      right: 20px;
+      top: auto;
+      bottom: auto;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .icon:hover{
+      color: red;
+      transition: 0.5s;
+    }
+  }
+
+  .message-out{
+    display: flex;
+    width: 70%;
+    height: 200px;
+    margin: auto;
+    background-color: #f6ada7;
+    box-shadow: #3d3451 0px 5px 15px;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: fadeOut 1s forwards;
+    opacity: 1;
+    padding: 20px;
+
+    h1{
+      margin: 0;
+      text-align: center;
+    }
+
+    .icon{
+      position: absolute;
+      right: 20px;
+      top: auto;
+      bottom: auto;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+    .icon:hover{
+      color: red;
+      transition: 0.5s;
+    }
+  }
+
+  @keyframes fadeIn {
+    from{opacity: 0; width: 60%; height: 170px;}
+    to{opacity: 1;width: 70%;height: 200px;}
+  }
+  @keyframes fadeOut {
+    from{opacity: 1;width: 70%;height: 200px;}
+    to{opacity: 0; width: 60%; height: 170px;}
+  }
+}
+
+.input{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+
+  input{
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    outline: none;
+  }
+  .btn{
+    width: 30%;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+
+
+    button{
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      position: relative;
+      z-index: 10;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    button::before{
+      	content: "";
+        width: 100%;
+        height: 100%;
+        left: -50%;
+        top: 0;
+        background-color: red;
+        position: absolute;
+        transform: skew(135deg);
+        z-index: -1;
+    }
+  }
+  .btn::before,
+  .btn::after
+    {
+      content: "";
+      inset: 0;
+      position: absolute;
+      background-image: linear-gradient(90deg,white,white,#f6ada7,#f6ada7,#f6ada7,red,red);
+      border-radius: 20px;
+    }
+    .btn:hover::after{
+      inset: -3px;
+      filter: blur(10px);
+    }
+}
+
+.notification{
+  display: flex;
+  width: 60%;
+  height: 60px;
+  background-color: pink;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 100px;
+  animation: notify 25s linear;
+  left: 120%;
+  border-radius: 30px;
+
+  img{
+    height: 100%;
+  }
+  h3{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@keyframes notify {
+  from{left: 100%;}
+  to{left: -100%;}
+}
