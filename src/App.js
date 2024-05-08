@@ -168,10 +168,6 @@ class App extends Component {
         return null
       }
     }
-
-    let somethingDifferent = ()=>{
-      console.log("something")
-    }
     return (
       <div className="container">
         <div className={fade ? "message-in" : "message-out"}>
